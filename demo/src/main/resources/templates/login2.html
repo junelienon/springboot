@@ -1,0 +1,12 @@
+<h2 th:text="${formTitle}"></h2>
+
+<label th:text="${labelUser}" for="username"></label>
+<input id="username" name="username" type="text">
+
+<label th:text="${labelPass}" for="password"></label>
+<input id="password" name="password" type="password">
+
+<button type="submit"
+        th:text="${btnText}"
+        th:style="'background-color:' + ${btnColor}">
+</button>

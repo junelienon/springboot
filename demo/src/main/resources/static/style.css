@@ -1,0 +1,89 @@
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6A82FB, #FC5C7D);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             }
+
+
+      h1.pay {
+          font-size: 60px;
+          color: #008000; /* green */
+          margin: 0 0 0 0; /* Space below */
+          display: inline-block;
+          padding: 10px 10px;
+          background: white;
+          border-radius: 20px;
+      /*box-shadow: 0 5px 20px rgba(0,0,0,0.1);*/
+          text-shadow: 3px 3px 6px rgba(0, 200, 0, 0.75);
+          cursor: default;
+       user-select: none;
+      font-family: 'Fredoka One', cursive;
+      }
+  
+
+         
+        .login-card {
+            background: white;
+            padding: 40px;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 19px;
+            border: 1px solid #aaa;
+            font-size: 16px;
+            text-align:center;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #6A82FB;
+            color: white;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            background: #4b63d1;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .message {
+            color: green;
+            margin-top: 10px;
+        }
+       
+
+
+        
+    
