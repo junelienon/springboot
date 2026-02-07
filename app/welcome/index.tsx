@@ -1,5 +1,5 @@
 import React from "react";
-import profilePic from '../welcome/img/profile.jpg';
+import profilePic from '../welcome/img/3d.ico';
 import '../pattern.css';
 import { Link } from "react-router";
 

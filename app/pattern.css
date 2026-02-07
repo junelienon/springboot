@@ -4,7 +4,7 @@
 * {
       box-sizing: border-box;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-       color: #ffffff;
+       color: #000000;
        margin: 0;
        padding: 0;
   }
@@ -23,19 +23,21 @@ body {
    HEADER & NAVIGATION
    =================================== */
 header {
-     background: rgba(15, 15, 35, 0.8);
-     backdrop-filter: blur(10px);
-     border-bottom: 1px solid rgba(11, 167, 32, 0.2);
-     position: sticky;
-     top: 0;
-     z-index: 1000;
-     transition: all 0.3s ease;
-}
+      background: rgba(15, 15, 35, 0.95);
+      backdrop-filter: blur(15px);
+      border-bottom: 2px solid rgba(11, 167, 32, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+ }
 
 header.scrolled {
-     background: rgba(15, 15, 35, 0.95);
-     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
+     background: rgba(15, 15, 35, 0.98);
+     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+     border-bottom: 2px solid rgba(11, 167, 32, 0.5);
+ }
 
 .logo {
      font-size: 28px;
@@ -57,8 +59,11 @@ header.scrolled {
 }
 
 .nav-link.active {
-     color: #0ba720 !important;
-     background: rgba(11, 167, 32, 0.1);
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #0ba720, #48f838);
+    border-color: #0ba720;
+    box-shadow: 0 4px 15px rgba(11, 167, 32, 0.4);
+    transform: translateY(-2px);
 }
 
  .nav-link:hover {
@@ -102,6 +107,7 @@ header.scrolled {
     text-align: center;
     margin-bottom: 50px;
     font-weight: 700;
+    color: #ffffff;
 }
 .portfolio-title span {
     color: #0ba720;
@@ -208,25 +214,56 @@ header.scrolled {
 /* ===================================
    ABOUT PAGE STYLES
    =================================== */
+.about {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 25% 30%, rgba(11, 167, 32, 0.08), transparent 50%),
+                radial-gradient(circle at 75% 70%, rgba(72, 248, 56, 0.05), transparent 50%);
+    pointer-events: none;
+}
+
+/* Ensure all text in about section is visible */
+.about * {
+    color: #ffffff !important;
+}
+
 .about h2 {
-     color: #0ba720;
-     font-weight: 700;
-     margin-bottom: 1rem;
- }
+    color: #0ba720 !important;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
 .about h3 {
-     color: #ffffff;
-     font-weight: 600;
-     font-size: 2rem;
- }
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
 .about p {
-     color: #ffffff;
-     line-height: 1.7;
-     margin-bottom: 1.5rem;
- }
+    color: #ffffff !important;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
 .about p.lead {
-     font-size: 1.1rem;
-     font-weight: 500;
- }
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.about .highlight {
+    color: #0ba720 !important;
+    font-weight: 700;
+}
 
  /* Skills Section */
  .skills-section {
@@ -368,16 +405,35 @@ header.scrolled {
 
 .skill-icon {
     font-size: 1.2rem;
+    color: #0ba720 !important;
+}
+
+/* Ensure all text in skill items is white */
+.skill-item * {
+    color: #ffffff !important;
+}
+
+.skill-item strong {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.skill-item .small,
+.skill-item .opacity-75 {
+    color: #ffffff !important;
+    opacity: 0.8;
 }
 
 /* Enhanced Navigation */
 .nav-link {
     color: #ffffff !important;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 25px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-link::before {
@@ -403,8 +459,11 @@ header.scrolled {
 }
 
 .nav-link:hover {
-    color: #48f838 !important;
+    color: #ffffff !important;
+    background: rgba(11, 167, 32, 0.2);
+    border-color: #48f838;
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(11, 167, 32, 0.3);
 }
 
 /* Enhanced Buttons */
@@ -424,9 +483,10 @@ header.scrolled {
     box-shadow: 0 12px 25px rgba(11, 167, 32, 0.4);
 }
 
-.btn.btn-custom-outline.btn-lg {
-    border: 2px solid #ffffff;
-    color: #fff;
+.btn.btn-custom-outline.btn-lg,
+.btn.btn-custom-outline {
+    border: 2px solid #0ba720;
+    color: #0ba720 !important;
     border-radius: 30px;
     padding: 1rem 2rem;
     font-weight: 600;
@@ -434,10 +494,11 @@ header.scrolled {
     transition: all 0.3s ease;
 }
 
-.btn.btn-custom-outline.btn-lg:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #0ba720;
-    color: #0ba720;
+.btn.btn-custom-outline.btn-lg:hover,
+.btn.btn-custom-outline:hover {
+    background: rgba(11, 167, 32, 0.2);
+    border-color: #48f838;
+    color: #48f838 !important;
     transform: translateY(-3px);
 }
 
@@ -569,68 +630,54 @@ transition: 0.3s ease;
 /* ===================================
    PORTFOLIO PAGE STYLES
    =================================== */
-   /* portfolio */
-.portfolio-title {
-    font-size: 42px;
-    text-align: center;
-    margin-bottom: 50px;
-    font-weight: 700;
+.portfolio {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    position: relative;
+    overflow: hidden;
 }
-.portfolio-title span {
-    color: #0ba720;
+
+.portfolio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(11, 167, 32, 0.08), transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(72, 248, 56, 0.05), transparent 50%);
+    pointer-events: none;
 }
-.portfolio-card {
-    background: #112240;
-    border: 2px solid transparent;
-    border-radius: 18px;
-    padding: 25px;
-    text-align: center;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-    margin-bottom: 30px;
+
+/* Ensure all text in portfolio section is visible */
+.portfolio * {
+    color: #ffffff !important;
 }
-.portfolio-card:hover {
-    border-color: #0ba720;
-    transform: scale(1.05);
+
+.portfolio h1,
+.portfolio .portfolio-title {
+    color: #ffffff !important;
 }
-.portfolio-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 18px;
-    box-shadow: 0 6px 12px rgba(11, 167, 32, 0.4);
-    transition: box-shadow 0.3s ease;
+
+.portfolio .tech-badge {
+    color: #48f838 !important;
 }
-.portfolio-card:hover img {
-    box-shadow: 0 10px 20px rgba(11, 167, 32, 0.7);
-}
-.portfolio-card h3 {
-    font-size: 1.6rem;
-    color: #0ba720;
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-.portfolio-card p {
-     font-size: 1rem;
-     color: #ffffff;
-     line-height: 1.6;
- }
 
 /* Enhanced Portfolio Cards */
-.portfolio-card {
-    background: linear-gradient(135deg, #112240, #1a365d);
-    border: 1px solid rgba(11, 167, 32, 0.2);
+.project-card {
+    background: linear-gradient(135deg, rgba(17, 34, 64, 0.9), rgba(26, 54, 93, 0.9));
+    border: 1px solid rgba(11, 167, 32, 0.3);
     border-radius: 20px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
     position: relative;
+    backdrop-filter: blur(10px);
 }
 
-.portfolio-card:hover {
+.project-card:hover {
     transform: translateY(-8px) scale(1.02);
     border-color: #0ba720;
-    box-shadow: 0 20px 40px rgba(11, 167, 32, 0.3);
+    box-shadow: 0 20px 40px rgba(11, 167, 32, 0.4);
+    background: linear-gradient(135deg, rgba(17, 34, 64, 0.95), rgba(26, 54, 93, 0.95));
 }
 
 .portfolio-image-container {
@@ -676,25 +723,28 @@ transition: 0.3s ease;
     text-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-.portfolio-title {
-    color: #0ba720;
+.portfolio .portfolio-title,
+.project-content .portfolio-title {
+    color: #ffffff !important;
     font-weight: 700;
     margin-bottom: 1rem;
     transition: color 0.3s ease;
 }
 
-.portfolio-card:hover .portfolio-title {
-    color: #48f838;
+.project-card:hover .portfolio-title {
+    color: #0ba720 !important;
 }
 
-.portfolio-description {
+.portfolio-description,
+.project-content p {
+    color: #ffffff !important;
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
 
 .tech-badge {
     background: rgba(11, 167, 32, 0.2);
-    color: #48f838;
+    color: #48f838 !important;
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -706,12 +756,13 @@ transition: 0.3s ease;
 .tech-badge:hover {
     background: rgba(11, 167, 32, 0.3);
     transform: translateY(-2px);
+    color: #ffffff !important;
 }
 
 .btn-gradient {
     background: linear-gradient(135deg, #0ba720, #48f838);
     border: none;
-    color: white;
+    color: #ffffff !important;
     font-weight: 600;
     padding: 0.8rem 2rem;
     border-radius: 25px;
@@ -723,7 +774,7 @@ transition: 0.3s ease;
 .btn-gradient:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(11, 167, 32, 0.4);
-    color: white;
+    color: #ffffff !important;
 }
 
 .btn-gradient::before {
@@ -773,6 +824,23 @@ transition: 0.3s ease;
 /* ===================================
    CONTACT PAGE STYLES
    =================================== */
+.contact {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(11, 167, 32, 0.1), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(72, 248, 56, 0.05), transparent 50%);
+    pointer-events: none;
+}
 .social-links h5 {
     color: #0ba720;
     font-weight: 600;
@@ -831,6 +899,28 @@ transition: 0.3s ease;
     font-weight: 600;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
+}
+
+/* Ensure all text in contact section is visible */
+.contact * {
+    color: #ffffff !important;
+}
+
+.contact .text-success,
+.contact h3,
+.contact h4,
+.contact h5,
+.contact .contact-card-icon,
+.contact .contact-card-content h4,
+.contact .social-link-modern:hover,
+.contact .social-link-modern:hover span {
+    color: #0ba720 !important;
+}
+
+.contact .contact-card-content p,
+.contact .contact-card-content small,
+.contact .social-link-modern span {
+    color: #ffffff !important;
 }
 
 /* New Contact Card Design */
@@ -980,7 +1070,7 @@ transition: 0.3s ease;
 }
 
 .project-content h4 {
-    color: #0ba720;
+    color: #ffffff;
     font-weight: 600;
     margin-bottom: 0.8rem;
 }
@@ -1013,10 +1103,39 @@ transition: 0.3s ease;
    =================================== */
 .hover-scale {
     transition: transform 0.3s ease;
+    color: #ffffff !important;
 }
 
 .hover-scale:hover {
     transform: scale(1.2);
+    color: #0ba720 !important;
+}
+
+/* Ensure social media icons are white */
+.hover-scale i {
+    color: #ffffff !important;
+}
+
+.hover-scale:hover i {
+    color: #0ba720 !important;
+}
+
+/* Specific styling for index section social links */
+.index .hover-scale {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.index .hover-scale:hover {
+    color: #0ba720 !important;
+    text-decoration: none !important;
+}
+
+.index .hover-scale i {
+    color: #ffffff !important;
+}
+
+.index .hover-scale:hover i {
     color: #0ba720 !important;
 }
 
@@ -1049,24 +1168,37 @@ transition: 0.3s ease;
     border-radius: 15px;
     padding: 1.5rem;
     margin-top: 2rem;
+    backdrop-filter: blur(10px);
 }
 
 .stats-container h3 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    color: #0ba720 !important;
 }
 
 .stats-container small {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #ffffff !important;
 }
 
 footer {
-    background: rgba(15, 15, 35, 0.8);
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(11, 167, 32, 0.2);
+}
+
+/* Ensure footer text is visible */
+footer * {
+    color: #ffffff !important;
+}
+
+footer .text-muted {
+    color: #ffffff !important;
+    opacity: 0.7;
 }
 
 /* ===================================

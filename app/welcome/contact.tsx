@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="contact-card-content">
                     <h4>Email</h4>
-                    <p>hello@example.com</p>
+                    <p>junelienonsalamanca08@gmail.com</p>
                     <small>Get a quick response</small>
                   </div>
                 </div>
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="contact-card-content">
                     <h4>Phone</h4>
-                    <p>+1 234 567 8900</p>
+                    <p>09203110577</p>
                     <small>Mon-Fri, 9AM-6PM EST</small>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="contact-card-content">
                     <h4>Location</h4>
-                    <p>Remote Available</p>
+                    <p>Philippines</p>
                     <small>Working worldwide</small>
                   </div>
                 </div>

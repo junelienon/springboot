@@ -2,12 +2,14 @@
   "name": "my-react-router-app",
   "private": true,
   "type": "module",
-  "scripts": {
-    "build": "react-router build",
-    "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
-  },
+"scripts": {
+  "dev": "node_modules/.bin/react-router dev",
+  "build": "node_modules/.bin/react-router build",
+  "start": "node_modules/.bin/react-router-serve ./build/server/index.js",
+  "typecheck": "node_modules/.bin/react-router typegen && tsc"
+}
+
+,
   "dependencies": {
     "@react-router/node": "7.12.0",
     "@react-router/serve": "7.12.0",

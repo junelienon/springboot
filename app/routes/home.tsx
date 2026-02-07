@@ -15,7 +15,7 @@ export default function AppRoutes() {
         <Route path="/welcome" element={<WelcomeIndex />} />
         <Route path="/welcome/about" element={<WelcomeAbout />} />
         <Route path="/welcome/contact" element={<WelcomeContact />} />
-        <Route path="/welcome/portfilio" element={<WelcomePortfolio />} />
+        <Route path="/welcome/portfolio" element={<WelcomePortfolio />} />
       </Route>
     </Routes>
   );

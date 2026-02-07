@@ -1,14 +1,12 @@
 
+import React from 'react';
 import '../pattern.css';
 import { Link } from "react-router";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import profileico from '../welcome/img/3d.ico';
+import profileico from '../welcome/img/profile.jpg';
 const About: React.FC = () => {
   return (
-    <>
-    
-
-<section className="about py-5">
+    <section className="about py-5">
     <div className="container">
         <div className="row align-items-center gy-5">
             <div className="col-lg-6 col-md-12 about-content">
@@ -104,8 +102,6 @@ const About: React.FC = () => {
         </div>
     </div>
 </section>
-
-    </>
   );
 };
 
